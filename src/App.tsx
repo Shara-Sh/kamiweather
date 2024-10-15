@@ -54,6 +54,15 @@ function App() {
     };
   }, [bgColorPath, textColorPath]);
 
+  useEffect(() => {
+    const themeColor = bgColorPath;
+    const metaThemeColor = document.querySelector("meta[name=theme-color]");
+
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute("content", themeColor);
+    }
+  }, []);
+
   return <>{screenWidth < 712 ? <PhoneApp /> : <WebsiteApp />}</>;
 }
 
