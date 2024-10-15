@@ -12,7 +12,7 @@ function Main() {
     if (weather && weather.icon) {
       const newIconPath =
         conditionStyles[weather.icon as keyof typeof conditionStyles].icon ||
-        "path/to/default-icon.svg";
+        "/assets/svg/default.svg";
       setIconPath(newIconPath);
     }
   }, [weather]);
